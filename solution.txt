@@ -1,0 +1,41 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+data = pd.read_csv("cricket_data.csv")
+
+# Plot the distribution of runs scored by batsmen
+plt.hist(data["runs"])
+plt.xlabel("Runs")
+plt.ylabel("Frequency")
+plt.show()
+
+# Calculate the average runs scored by batsmen
+average_runs = data["runs"].mean()
+print("The average runs scored by batsmen is", average_runs)
+
+# Calculate the batting average of batsmen
+batting_average = data["runs"] / data["balls_faced"]
+print("The batting average of batsmen is", batting_average)
+
+# Calculate the strike rate of batsmen
+strike_rate = data["runs"] / data["balls_faced"] * 100
+print("The strike rate of batsmen is", strike_rate)
+
+# Plot the distribution of wickets taken by bowlers
+plt.hist(data["wickets"])
+plt.xlabel("Wickets")
+plt.ylabel("Frequency")
+plt.show()
+
+# Calculate the average wickets taken by bowlers
+average_wickets = data["wickets"].mean()
+print("The average wickets taken by bowlers is", average_wickets)
+
+# Calculate the bowling average of bowlers
+bowling_average = data["runs"] / data["wickets"]
+print("The bowling average of bowlers is", bowling_average)
+
+# Calculate the economy rate of bowlers
+economy_rate = data["runs"] / data["overs"]
+print("The economy rate of bowlers is", economy_rate)
